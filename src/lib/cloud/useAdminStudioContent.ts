@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import type { JsonPagesConfig } from '@olonjs/core';
-import { applyLegacyCloudPayload, fetchLegacyCloudContentPayload } from '@/lib/cloud/cloudContentClient';
+import { applyLegacyCloudPayload, fetchAdminCloudRenderPayload } from '@/lib/cloud/cloudContentClient';
 import { cloudFingerprint, writeCachedCloudContent } from '@/lib/cloud/cloudCache';
 import { isAdminPath, patchHistoryNavigation } from '@/lib/spp';
 import { APP_BASE_PATH } from '@/lib/tenantEnv';
-import type { PageConfig, SiteConfig } from '@/types';
+import type { MenuConfig, PageConfig, SiteConfig } from '@/types';
 
 const MAX_RETRIES = 2;
 
@@ -15,19 +15,21 @@ type UseAdminStudioContentOptions = {
   apiKey: string;
   setPages: Dispatch<SetStateAction<Record<string, PageConfig>>>;
   setSiteConfig: Dispatch<SetStateAction<SiteConfig>>;
+  setMenuConfig?: Dispatch<SetStateAction<MenuConfig>>;
   setCollections: Dispatch<SetStateAction<NonNullable<JsonPagesConfig['collections']>>>;
 };
 
-/** Studio `/admin` sync via legacy `/content` — never mixed into visitor `/render` bootstrap. */
+/** Studio `/admin` sync via SPP `/render` — never mixed into visitor bootstrap. */
 export function useAdminStudioContent({
   enabled,
   apiCandidates,
   apiKey,
   setPages,
   setSiteConfig,
+  setMenuConfig,
   setCollections,
 }: UseAdminStudioContentOptions) {
-  const loadedRef = useRef(false);
+  const lastSyncedPathRef = useRef<string | null>(null);
   const inFlightRef = useRef<Promise<void> | null>(null);
 
   useEffect(() => {
@@ -35,14 +37,17 @@ export function useAdminStudioContent({
 
     const syncIfAdmin = () => {
       if (!isAdminPath(window.location.pathname, APP_BASE_PATH)) return;
-      if (loadedRef.current || inFlightRef.current) return;
+      const currentPath = window.location.pathname;
+      if (lastSyncedPathRef.current === currentPath || inFlightRef.current) return;
 
       const controller = new AbortController();
       const fingerprint = cloudFingerprint(apiCandidates[0]!, apiKey);
+      lastSyncedPathRef.current = currentPath;
 
-      inFlightRef.current = fetchLegacyCloudContentPayload(
+      inFlightRef.current = fetchAdminCloudRenderPayload(
         apiCandidates,
         apiKey,
+        currentPath,
         controller.signal,
         MAX_RETRIES,
       )
@@ -51,18 +56,21 @@ export function useAdminStudioContent({
             setPages,
             setSiteConfig,
           });
+          if (payload.menuConfig && setMenuConfig) {
+            setMenuConfig(payload.menuConfig as MenuConfig);
+          }
           writeCachedCloudContent({
             keyFingerprint: fingerprint,
             savedAt: Date.now(),
             siteConfig: remoteSite ?? null,
             pages: (remotePages ?? {}) as Record<string, unknown>,
           });
-          loadedRef.current = true;
         })
         .catch((error: unknown) => {
           if (import.meta.env.DEV) {
-            console.warn('[admin-studio] legacy content sync failed', error);
+            console.warn('[admin-studio] render sync failed', error);
           }
+          lastSyncedPathRef.current = null;
         })
         .finally(() => {
           inFlightRef.current = null;
@@ -75,6 +83,5 @@ export function useAdminStudioContent({
       unpatch();
       inFlightRef.current = null;
     };
-  }, [enabled, apiCandidates, apiKey, setPages, setSiteConfig, setCollections]);
+  }, [enabled, apiCandidates, apiKey, setPages, setSiteConfig, setMenuConfig, setCollections]);
 }
-

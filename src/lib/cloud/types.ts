@@ -7,7 +7,9 @@ export type ContentStatus = 'ok' | 'empty_namespace' | 'legacy_fallback';
 export type ContentResponse = {
   ok?: boolean;
   siteConfig?: unknown;
+  menuConfig?: unknown;
   pages?: unknown;
+  pagesIndex?: string[];
   items?: unknown;
   error?: string;
   code?: string;
@@ -22,6 +24,7 @@ export type CachedCloudContent = {
   keyFingerprint: string;
   savedAt: number;
   siteConfig: unknown | null;
+  menuConfig?: unknown | null;
   pages: Record<string, unknown>;
   collections?: JsonPagesConfig['collections'];
 };
@@ -31,4 +34,3 @@ export type CloudLoadFailure = {
   message: string;
   correlationId?: string;
 };
-

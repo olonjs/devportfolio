@@ -116,7 +116,7 @@ export function useTenantBootstrap({
 
   const isHotSaveMode = isCloudMode && !isSave2RepoMode;
 
-  const useRenderBootstrap = isHotSaveMode;
+  const useRenderBootstrap = isHotSaveMode || isSave2RepoMode;
 
 
 

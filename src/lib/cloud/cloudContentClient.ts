@@ -1,7 +1,83 @@
 import { backoffDelayMs, isRetryableStatus, sleep } from '@/lib/cloud/cloudHttp';
-import { extractContentSources, coerceSiteConfig, toPagesRecord } from '@/lib/cloud/contentCoercion';
+import { extractContentSources, coerceSiteConfig, normalizeRouteSlug, toPagesRecord } from '@/lib/cloud/contentCoercion';
 import type { CloudLoadFailure, ContentResponse } from '@/lib/cloud/types';
+import { fetchRenderProjection, normalizeRenderPath } from '@/lib/spp/renderClient';
+import { APP_BASE_PATH } from '@/lib/tenantEnv';
 import type { PageConfig, SiteConfig } from '@/types';
+
+function cleanAdminPath(path: string): string {
+  const trimmed = path.trim();
+  if (!trimmed) return '/';
+
+  let cleaned = trimmed;
+  if (cleaned.startsWith('/admin/preview/')) {
+    cleaned = cleaned.replace(/^\/admin\/preview/, '');
+  } else if (cleaned.startsWith('/preview/')) {
+    cleaned = cleaned.replace(/^\/preview/, '');
+  } else if (cleaned.startsWith('/admin/')) {
+    cleaned = cleaned.replace(/^\/admin/, '');
+  } else if (cleaned === '/admin') {
+    cleaned = '/';
+  }
+
+  if (!cleaned.startsWith('/')) cleaned = `/${cleaned}`;
+  return cleaned === '' ? '/' : cleaned;
+}
+
+function resolveAdminRenderPath(pathname: string, search: string, basePath: string): string {
+  const normalizedPath = normalizeRenderPath(pathname, basePath);
+  const params = new URLSearchParams(search);
+  const candidatePaths = [
+    params.get('path'),
+    params.get('page'),
+    params.get('slug') ? `/${params.get('slug')}` : null,
+    normalizedPath,
+  ];
+
+  for (const candidate of candidatePaths) {
+    if (!candidate) continue;
+    const cleaned = cleanAdminPath(candidate);
+    if (cleaned && cleaned !== '/admin') return cleaned;
+  }
+
+  return '/';
+}
+
+export async function fetchAdminCloudRenderPayload(
+  apiCandidates: string[],
+  apiKey: string,
+  pathname: string,
+  signal: AbortSignal,
+  maxRetryAttempts: number
+): Promise<ContentResponse> {
+  const renderPath = resolveAdminRenderPath(pathname, window.location.search, APP_BASE_PATH);
+  const projection = await fetchRenderProjection(apiCandidates, apiKey, renderPath, {
+    signal,
+    maxRetryAttempts,
+  });
+
+  if (!projection.ok || !projection.page) {
+    throw {
+      reasonCode: projection.code || 'RENDER_PROJECTION_FAILED',
+      message: projection.error || 'Render projection failed',
+      correlationId: projection.correlationId,
+    } satisfies CloudLoadFailure;
+  }
+
+  const pageSlug = typeof projection.page.slug === 'string' && projection.page.slug.trim()
+    ? normalizeRouteSlug(projection.page.slug)
+    : normalizeRouteSlug(renderPath);
+
+  return {
+    ok: true,
+    siteConfig: projection.context?.siteConfig,
+    menuConfig: projection.context?.menuConfig,
+    pages: { [pageSlug]: projection.page },
+    pagesIndex: projection.pagesIndex,
+    contentStatus: 'ok',
+    correlationId: projection.correlationId,
+  };
+}
 
 export async function fetchLegacyCloudContentPayload(
   apiCandidates: string[],
@@ -78,7 +154,7 @@ export async function fetchLegacyCloudContentPayload(
 export function applyLegacyCloudPayload(
   payload: ContentResponse,
   setters: {
-    setPages: (pages: Record<string, PageConfig>) => void;
+    setPages: (pages: Record<string, PageConfig> | ((prev: Record<string, PageConfig>) => Record<string, PageConfig>)) => void;
     setSiteConfig: (site: SiteConfig) => void;
   }
 ): { remotePages: Record<string, PageConfig> | null; remoteSite: SiteConfig | null } {
@@ -94,11 +170,20 @@ export function applyLegacyCloudPayload(
     } satisfies CloudLoadFailure;
   }
   if (remotePages && remotePageCount > 0) {
-    setters.setPages(remotePages);
+    const pagesIndex = payload.pagesIndex || [];
+    setters.setPages((prev) => {
+      const next = { ...prev };
+      for (const slug of pagesIndex) {
+        if (!next[slug]) {
+          next[slug] = { id: `${slug}-page`, slug, meta: { title: slug, description: '' }, sections: [] };
+        }
+      }
+      Object.assign(next, remotePages);
+      return next;
+    });
   }
   if (remoteSite) {
     setters.setSiteConfig(remoteSite);
   }
   return { remotePages, remoteSite };
 }
-
