@@ -88,7 +88,7 @@ function extractLeadingRemoteCssImports(cssText: string): { hrefs: string[]; res
   const hrefs = new Set<string>();
   const leadingTriviaPattern = /^(?:\s+|\/\*[\s\S]*?\*\/)*/;
   const importPattern =
-    /^@import(?:\s+url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)|\s*(['"])([^'"]+)\4)\s*([^;]*);/i;
+    /^@import(?:\s*url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)|\s*(['"])([^'"]+)\4)\s*([^;]*);/i;
   let rest = cssText;
 
   for (;;) {

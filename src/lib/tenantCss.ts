@@ -27,8 +27,9 @@ function isRemoteStylesheetHref(value: string): boolean {
 export function extractLeadingRemoteCssImports(cssText: string): { hrefs: string[]; rest: string } {
   const hrefs = new Set<string>();
   const leadingTriviaPattern = /^(?:\s+|\/\*[\s\S]*?\*\/)*/;
+  // Vite/Tailwind may emit `@import url("...")` or compacted `@import"https://..."`.
   const importPattern =
-    /^@import\s+url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)\s*([^;]*);/i;
+    /^@import(?:\s*url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)|\s*(['"])([^'"]+)\4)\s*([^;]*);/i;
   let rest = cssText;
 
   for (;;) {
@@ -40,8 +41,8 @@ export function extractLeadingRemoteCssImports(cssText: string): { hrefs: string
     const match = rest.match(importPattern);
     if (!match) break;
 
-    const href = (match[1] ?? match[2] ?? match[3] ?? '').trim();
-    const trailingDirectives = (match[4] ?? '').trim();
+    const href = (match[1] ?? match[2] ?? match[3] ?? match[5] ?? '').trim();
+    const trailingDirectives = (match[6] ?? '').trim();
 
     if (!isRemoteStylesheetHref(href) || trailingDirectives.length > 0) {
       break;
