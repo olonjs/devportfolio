@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-15T19:32:39.527Z",
+  "generatedAt": "2026-07-15T19:43:25.385Z",
   "slug": "blog/schema-driven-content-without-regret",
   "title": "Article detail page for Andrew Linh technical writing",
   "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.",

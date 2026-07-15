@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-15T19:32:39.544Z",
+  "generatedAt": "2026-07-15T19:43:25.402Z",
   "slug": "work/ledger-graph-migration",
   "title": "Project case study detail page for Andrew Linh portfolio",
   "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.",

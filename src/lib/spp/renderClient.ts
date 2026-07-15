@@ -15,6 +15,7 @@ export type RenderProjectionResponse = {
     menuConfig: MenuConfig;
   };
   page?: PageConfig;
+  pagesIndex?: string[];
   diagnostics?: {
     projectionMode: 'atomic' | 'legacy_fallback';
     unresolvedRefs: string[];
