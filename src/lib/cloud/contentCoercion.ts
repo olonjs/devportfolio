@@ -54,7 +54,6 @@ export function coerceSiteConfig(value: unknown): SiteConfig | null {
   }
   if (!isObjectRecord(input)) return null;
   if (!isObjectRecord(input.identity)) return null;
-  if (!Array.isArray(input.pages)) return null;
 
   return input as unknown as SiteConfig;
 }

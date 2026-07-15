@@ -244,7 +244,8 @@ export function useTenantBootstrap({
 
         .then(({ pages: nextPages, siteConfig: nextSite }) => {
 
-          setPages(nextPages);
+          // Keep parametric registry templates from DNA so Studio / router still see them.
+          setPages((prev) => ({ ...filePages, ...prev, ...nextPages }));
 
           setSiteConfig(nextSite);
 
