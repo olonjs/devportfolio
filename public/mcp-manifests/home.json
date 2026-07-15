@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-page-mcp-manifest",
+  "generatedAt": "2026-07-15T12:50:01.206Z",
+  "slug": "home",
+  "title": "Andrew Linh — Systems Architect and Technical Writer",
+  "description": "Explore the portfolio and writing of Andrew Linh, a systems architect focused on backend platforms, structured data systems, developer tools, and AI-native infrastructure.",
+  "contractHref": "/schemas/home.schema.json",
+  "transport": {
+    "kind": "window-message",
+    "requestType": "olonjs:webmcp:tool-call",
+    "resultType": "olonjs:webmcp:tool-result",
+    "target": "window"
+  },
+  "capabilities": {
+    "resources": [
+      {
+        "uri": "olon://pages/home",
+        "name": "Andrew Linh — Systems Architect and Technical Writer Data",
+        "mimeType": "application/json",
+        "description": "Structured content for the home page."
+      },
+      {
+        "uri": "olon://pages",
+        "name": "Site Map",
+        "mimeType": "application/json",
+        "description": "Structured content for the map of this site"
+      }
+    ]
+  },
+  "sectionTypes": [
+    "header",
+    "footer",
+    "editorial-hero",
+    "featured-projects",
+    "blog-rollup",
+    "bio-panel",
+    "contact-cta"
+  ],
+  "sectionInstances": [
+    {
+      "id": "global-header",
+      "type": "header",
+      "scope": "global",
+      "label": "header"
+    },
+    {
+      "id": "global-footer",
+      "type": "footer",
+      "scope": "global",
+      "label": "footer"
+    },
+    {
+      "id": "home-editorial-hero",
+      "type": "editorial-hero",
+      "scope": "local",
+      "label": "Systems architecture for products that need"
+    },
+    {
+      "id": "home-featured-projects",
+      "type": "featured-projects",
+      "scope": "local",
+      "label": "Case studies in backend architecture and system design"
+    },
+    {
+      "id": "home-blog-rollup",
+      "type": "blog-rollup",
+      "scope": "local",
+      "label": "Notes on content systems, type contracts, and AI tooling"
+    },
+    {
+      "id": "home-bio-panel",
+      "type": "bio-panel",
+      "scope": "local",
+      "label": "Technical depth, editorial discipline, and a bias toward calm systems"
+    },
+    {
+      "id": "home-contact-cta",
+      "type": "contact-cta",
+      "scope": "local",
+      "label": "Need an architect who can also write the system down clearly?"
+    }
+  ],
+  "tools": [
+    {
+      "name": "update-section",
+      "description": "Update a section field in the Studio draft. Does not persist — call save when all updates are complete. Use sectionType to select the matching schema from sectionSchemas."
+    },
+    {
+      "name": "save",
+      "description": "Persist all pending draft changes using the active save mode (local file, hot save, or save2repo). Call once after all update-section calls are complete."
+    }
+  ]
+}

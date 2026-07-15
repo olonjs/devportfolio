@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-page-mcp-manifest",
+  "generatedAt": "2026-07-15T12:50:01.212Z",
+  "slug": "work",
+  "title": "Work — Case Studies in Backend and Data Architecture",
+  "description": "Browse detailed project case studies by Andrew Linh covering backend platforms, data systems, AI tooling, and developer experience architecture.",
+  "contractHref": "/schemas/work.schema.json",
+  "transport": {
+    "kind": "window-message",
+    "requestType": "olonjs:webmcp:tool-call",
+    "resultType": "olonjs:webmcp:tool-result",
+    "target": "window"
+  },
+  "capabilities": {
+    "resources": [
+      {
+        "uri": "olon://pages/work",
+        "name": "Work — Case Studies in Backend and Data Architecture Data",
+        "mimeType": "application/json",
+        "description": "Structured content for the work page."
+      },
+      {
+        "uri": "olon://pages",
+        "name": "Site Map",
+        "mimeType": "application/json",
+        "description": "Structured content for the map of this site"
+      }
+    ]
+  },
+  "sectionTypes": [
+    "header",
+    "footer",
+    "page-hero",
+    "featured-projects",
+    "bio-panel",
+    "contact-cta"
+  ],
+  "sectionInstances": [
+    {
+      "id": "global-header",
+      "type": "header",
+      "scope": "global",
+      "label": "header"
+    },
+    {
+      "id": "global-footer",
+      "type": "footer",
+      "scope": "global",
+      "label": "footer"
+    },
+    {
+      "id": "work-page-hero",
+      "type": "page-hero",
+      "scope": "local",
+      "label": "Project case studies with context, trade-offs, and measurable outcomes"
+    },
+    {
+      "id": "work-featured-projects",
+      "type": "featured-projects",
+      "scope": "local",
+      "label": "Recent architecture engagements"
+    },
+    {
+      "id": "work-bio-panel",
+      "type": "bio-panel",
+      "scope": "local",
+      "label": "I document the architecture, not only the implementation"
+    },
+    {
+      "id": "work-contact-cta",
+      "type": "contact-cta",
+      "scope": "local",
+      "label": "Have a platform problem that needs both architecture and explanation?"
+    }
+  ],
+  "tools": [
+    {
+      "name": "update-section",
+      "description": "Update a section field in the Studio draft. Does not persist — call save when all updates are complete. Use sectionType to select the matching schema from sectionSchemas."
+    },
+    {
+      "name": "save",
+      "description": "Persist all pending draft changes using the active save mode (local file, hot save, or save2repo). Call once after all update-section calls are complete."
+    }
+  ]
+}

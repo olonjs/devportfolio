@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-page-mcp-manifest",
+  "generatedAt": "2026-07-15T12:50:01.199Z",
+  "slug": "blog",
+  "title": "Blog — Writing on Structured Systems and Developer Tooling",
+  "description": "Read essays by Andrew Linh on schema-driven content, end-to-end type safety, AI agent tooling, developer experience, and practical backend architecture.",
+  "contractHref": "/schemas/blog.schema.json",
+  "transport": {
+    "kind": "window-message",
+    "requestType": "olonjs:webmcp:tool-call",
+    "resultType": "olonjs:webmcp:tool-result",
+    "target": "window"
+  },
+  "capabilities": {
+    "resources": [
+      {
+        "uri": "olon://pages/blog",
+        "name": "Blog — Writing on Structured Systems and Developer Tooling Data",
+        "mimeType": "application/json",
+        "description": "Structured content for the blog page."
+      },
+      {
+        "uri": "olon://pages",
+        "name": "Site Map",
+        "mimeType": "application/json",
+        "description": "Structured content for the map of this site"
+      }
+    ]
+  },
+  "sectionTypes": [
+    "header",
+    "footer",
+    "page-hero",
+    "blog-rollup",
+    "philosophy",
+    "contact-cta"
+  ],
+  "sectionInstances": [
+    {
+      "id": "global-header",
+      "type": "header",
+      "scope": "global",
+      "label": "header"
+    },
+    {
+      "id": "global-footer",
+      "type": "footer",
+      "scope": "global",
+      "label": "footer"
+    },
+    {
+      "id": "blog-page-hero",
+      "type": "page-hero",
+      "scope": "local",
+      "label": "Essays on structured systems, developer tooling, and architectural clarity"
+    },
+    {
+      "id": "blog-rollup-main",
+      "type": "blog-rollup",
+      "scope": "local",
+      "label": "Recent articles"
+    },
+    {
+      "id": "blog-philosophy-panel",
+      "type": "philosophy",
+      "scope": "local",
+      "label": "What the blog tries to do"
+    },
+    {
+      "id": "blog-contact-cta",
+      "type": "contact-cta",
+      "scope": "local",
+      "label": "Need a technical article, architecture memo, or internal platform narrative?"
+    }
+  ],
+  "tools": [
+    {
+      "name": "update-section",
+      "description": "Update a section field in the Studio draft. Does not persist — call save when all updates are complete. Use sectionType to select the matching schema from sectionSchemas."
+    },
+    {
+      "name": "save",
+      "description": "Persist all pending draft changes using the active save mode (local file, hot save, or save2repo). Call once after all update-section calls are complete."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "global-header",
+    "type": "header",
+    "data": {
+      "announcement": "Systems architecture, structured data, and AI-native tooling.",
+      "logoText": "Andrew Linh",
+      "logoHighlight": "systems architect",
+      "menu": {
+        "$ref": "../config/menu.json#/main"
+      }
+    },
+    "settings": {
+      "sticky": true
+    }
+  },
+  "footer": {
+    "id": "global-footer",
+    "type": "footer",
+    "data": {
+      "brandText": "Andrew Linh",
+      "brandHighlight": "technical writing",
+      "summary": "A personal portfolio and editorial home for backend architecture, developer tools, and calm, precise systems design.",
+      "email": "hello@andrewlinh.dev",
+      "copyright": "© 2026 Andrew Linh. All rights reserved.",
+      "menu": {
+        "$ref": "../config/menu.json#/footer"
+      }
+    },
+    "settings": {
+      "showLogo": true
+    }
+  },
+  "identity": {
+    "title": "Andrew Linh"
+  }
+}

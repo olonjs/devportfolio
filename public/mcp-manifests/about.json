@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-page-mcp-manifest",
+  "generatedAt": "2026-07-15T12:50:01.192Z",
+  "slug": "about",
+  "title": "About Andrew Linh — Architecture, Writing, and Systems Thinking",
+  "description": "Learn about Andrew Linh’s professional path, technical stack, and design philosophy across backend systems, developer tooling, structured content, and AI-native infrastructure.",
+  "contractHref": "/schemas/about.schema.json",
+  "transport": {
+    "kind": "window-message",
+    "requestType": "olonjs:webmcp:tool-call",
+    "resultType": "olonjs:webmcp:tool-result",
+    "target": "window"
+  },
+  "capabilities": {
+    "resources": [
+      {
+        "uri": "olon://pages/about",
+        "name": "About Andrew Linh — Architecture, Writing, and Systems Thinking Data",
+        "mimeType": "application/json",
+        "description": "Structured content for the about page."
+      },
+      {
+        "uri": "olon://pages",
+        "name": "Site Map",
+        "mimeType": "application/json",
+        "description": "Structured content for the map of this site"
+      }
+    ]
+  },
+  "sectionTypes": [
+    "header",
+    "footer",
+    "page-hero",
+    "bio-panel",
+    "timeline",
+    "skills-grid",
+    "philosophy"
+  ],
+  "sectionInstances": [
+    {
+      "id": "global-header",
+      "type": "header",
+      "scope": "global",
+      "label": "header"
+    },
+    {
+      "id": "global-footer",
+      "type": "footer",
+      "scope": "global",
+      "label": "footer"
+    },
+    {
+      "id": "about-page-hero",
+      "type": "page-hero",
+      "scope": "local",
+      "label": "A systems architect who writes to make architecture legible"
+    },
+    {
+      "id": "about-bio-panel",
+      "type": "bio-panel",
+      "scope": "local",
+      "label": "From backend delivery to platform-level system design"
+    },
+    {
+      "id": "about-timeline",
+      "type": "timeline",
+      "scope": "local",
+      "label": "Professional trajectory"
+    },
+    {
+      "id": "about-skills-grid",
+      "type": "skills-grid",
+      "scope": "local",
+      "label": "Tools and systems I reach for often"
+    },
+    {
+      "id": "about-philosophy",
+      "type": "philosophy",
+      "scope": "local",
+      "label": "How I think about architecture work"
+    }
+  ],
+  "tools": [
+    {
+      "name": "update-section",
+      "description": "Update a section field in the Studio draft. Does not persist — call save when all updates are complete. Use sectionType to select the matching schema from sectionSchemas."
+    },
+    {
+      "name": "save",
+      "description": "Persist all pending draft changes using the active save mode (local file, hot save, or save2repo). Call once after all update-section calls are complete."
+    }
+  ]
+}

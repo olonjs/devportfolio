@@ -1,0 +1,102 @@
+{
+  "name": "Andrew Linh",
+  "tokens": {
+    "colors": {
+      "background": "#0a0d0c",
+      "foreground": "#eef2ef",
+      "card": "#111514",
+      "card-foreground": "#eef2ef",
+      "elevated": "#171c1a",
+      "overlay": "#0d110fff",
+      "primary": "#5dd39e",
+      "primary-foreground": "#07100b",
+      "primary-light": "#8be6ba",
+      "primary-dark": "#2e8f64",
+      "accent": "#7ce3b0",
+      "accent-foreground": "#07100b",
+      "secondary": "#151a18",
+      "secondary-foreground": "#d5ddd8",
+      "muted": "#101413",
+      "muted-foreground": "#95a29a",
+      "border": "#202826",
+      "border-strong": "#31403b",
+      "input": "#151a18",
+      "ring": "#5dd39e",
+      "destructive": "#b84f5f",
+      "destructive-foreground": "#fff3f5",
+      "success": "#4bc289",
+      "success-foreground": "#06110b",
+      "warning": "#c9a35c",
+      "warning-foreground": "#171108",
+      "info": "#62b8a2",
+      "info-foreground": "#06110d"
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "\"Instrument Sans\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "mono": "\"SFMono-Regular\", \"SF Mono\", Consolas, \"Liberation Mono\", Menlo, monospace",
+        "display": "\"Instrument Serif\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif"
+      },
+      "wordmark": {
+        "fontFamily": "\"Instrument Sans\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "weight": "600"
+      }
+    },
+    "borderRadius": {
+      "sm": "6px",
+      "md": "10px",
+      "lg": "14px",
+      "xl": "18px",
+      "full": "9999px"
+    },
+    "spacing": {
+      "container-max": "1152px",
+      "section-y": "104px",
+      "header-h": "64px",
+      "sidebar-w": "240px"
+    },
+    "zIndex": {
+      "base": "0",
+      "elevated": "10",
+      "dropdown": "100",
+      "sticky": "200",
+      "overlay": "300",
+      "modal": "400",
+      "toast": "500"
+    },
+    "modes": {
+      "light": {
+        "colors": {
+          "background": "#f7f8f7",
+          "foreground": "#111614",
+          "card": "#ffffff",
+          "card-foreground": "#111614",
+          "elevated": "#eef1ef",
+          "overlay": "#f5f7f6ee",
+          "primary": "#267a53",
+          "primary-foreground": "#f7fff9",
+          "primary-light": "#5cb98a",
+          "primary-dark": "#1d6041",
+          "accent": "#2f8d60",
+          "accent-foreground": "#f7fff9",
+          "secondary": "#eef1ef",
+          "secondary-foreground": "#1b221f",
+          "muted": "#f0f3f1",
+          "muted-foreground": "#5b6861",
+          "border": "#d9e1dd",
+          "border-strong": "#bcc8c2",
+          "input": "#ffffff",
+          "ring": "#267a53",
+          "destructive": "#b84f5f",
+          "destructive-foreground": "#fff7f8",
+          "success": "#2b8e61",
+          "success-foreground": "#f6fffa",
+          "warning": "#a7792a",
+          "warning-foreground": "#fff8ec",
+          "info": "#2f7e70",
+          "info-foreground": "#f5fffd"
+        }
+      }
+    }
+  }
+}

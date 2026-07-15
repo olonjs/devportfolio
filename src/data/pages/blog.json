@@ -1,0 +1,71 @@
+{
+  "id": "blog-page",
+  "slug": "blog",
+  "meta": {
+    "title": "Blog — Writing on Structured Systems and Developer Tooling",
+    "description": "Read essays by Andrew Linh on schema-driven content, end-to-end type safety, AI agent tooling, developer experience, and practical backend architecture."
+  },
+  "sections": [
+    {
+      "id": "blog-page-hero",
+      "type": "page-hero",
+      "data": {
+        "label": "Blog",
+        "title": "Essays on structured systems, developer tooling, and architectural clarity",
+        "description": "Writing here focuses on the contracts, runtime behaviors, and organizational choices that make software easier to build and operate."
+      },
+      "settings": { "theme": "dark" }
+    },
+    {
+      "id": "blog-rollup-main",
+      "type": "blog-rollup",
+      "data": {
+        "label": "All posts",
+        "title": "Recent articles",
+        "description": "Long-form notes drawn from consulting work, platform design, and technical editorial practice.",
+        "items": { "$ref": "../collections/posts/posts.json" }
+      },
+      "settings": { "theme": "dark" }
+    },
+    {
+      "id": "blog-philosophy-panel",
+      "type": "philosophy",
+      "data": {
+        "label": "Editorial stance",
+        "title": "What the blog tries to do",
+        "description": "I prefer writing that turns architecture into practical decision-making rather than abstract inspiration.",
+        "items": [
+          {
+            "id": "blog-principle-1",
+            "title": "Specific over vague",
+            "body": "Concrete examples, explicit trade-offs, and operational consequences matter more than broad best-practice slogans."
+          },
+          {
+            "id": "blog-principle-2",
+            "title": "Systems over tools",
+            "body": "I care less about novelty than about how a tool changes ownership, failure modes, and maintenance burden."
+          },
+          {
+            "id": "blog-principle-3",
+            "title": "Writing as infrastructure",
+            "body": "Good technical writing reduces ambiguity in exactly the same way good interfaces do."
+          }
+        ]
+      },
+      "settings": { "theme": "dark" }
+    },
+    {
+      "id": "blog-contact-cta",
+      "type": "contact-cta",
+      "data": {
+        "label": "Commissioned writing",
+        "title": "Need a technical article, architecture memo, or internal platform narrative?",
+        "description": "I also work with teams on developer-facing documentation, system explainers, and editorial framing for technically complex products.",
+        "primaryCta": { "id": "blog-contact-cta-1", "label": "Get in touch", "href": "/contact", "variant": "primary" },
+        "secondaryCta": { "id": "blog-contact-cta-2", "label": "See work", "href": "/work", "variant": "secondary" }
+      },
+      "settings": { "theme": "accent" }
+    }
+  ]
+}
+

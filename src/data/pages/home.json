@@ -1,0 +1,109 @@
+{
+  "id": "home-page",
+  "slug": "home",
+  "meta": {
+    "title": "Andrew Linh — Systems Architect and Technical Writer",
+    "description": "Explore the portfolio and writing of Andrew Linh, a systems architect focused on backend platforms, structured data systems, developer tools, and AI-native infrastructure."
+  },
+  "sections": [
+    {
+      "id": "home-editorial-hero",
+      "type": "editorial-hero",
+      "data": {
+        "label": "Andrew Linh",
+        "title": "Systems architecture for products that need",
+        "titleHighlight": "clarity under load.",
+        "description": "I design backend platforms, structured data systems, and AI-native tooling with an emphasis on legibility, type safety, and operational calm.",
+        "status": "Available for consulting in Q2",
+        "primaryCta": {
+          "id": "home-hero-cta-1",
+          "label": "Start a conversation",
+          "href": "/contact",
+          "variant": "primary"
+        },
+        "secondaryCta": {
+          "id": "home-hero-cta-2",
+          "label": "See selected work",
+          "href": "/work",
+          "variant": "secondary"
+        }
+      },
+      "settings": {
+        "paddingTop": "md",
+        "paddingBottom": "lg",
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-featured-projects",
+      "type": "featured-projects",
+      "data": {
+        "label": "Selected work",
+        "title": "Case studies in backend architecture and system design",
+        "description": "A small set of projects where the technical problem was clear, the architectural trade-offs mattered, and the outcome was measurable.",
+        "items": {
+          "$ref": "../collections/projects/projects.json"
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-blog-rollup",
+      "type": "blog-rollup",
+      "data": {
+        "label": "Latest writing",
+        "title": "Notes on content systems, type contracts, and AI tooling",
+        "description": "Recent essays from the editorial side of the practice.",
+        "items": {
+          "$ref": "../collections/posts/posts.json"
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-bio-panel",
+      "type": "bio-panel",
+      "data": {
+        "label": "Short bio",
+        "title": "Technical depth, editorial discipline, and a bias toward calm systems",
+        "description": "I work at the intersection of architecture and explanation. My background spans backend platform design, data contracts, and internal developer tooling. I care about making systems easier to reason about, not only faster to ship.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+          "alt": "Portrait of a technical professional in a dark studio setting"
+        },
+        "note": "Based in Europe, working globally across product, platform, and editorial teams."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-contact-cta",
+      "type": "contact-cta",
+      "data": {
+        "label": "Contact",
+        "title": "Need an architect who can also write the system down clearly?",
+        "description": "I help teams design backend platforms, developer-facing infrastructure, and structured content systems that remain understandable after launch.",
+        "primaryCta": {
+          "id": "home-contact-cta-1",
+          "label": "Contact Andrew",
+          "href": "/contact",
+          "variant": "primary"
+        },
+        "secondaryCta": {
+          "id": "home-contact-cta-2",
+          "label": "Read the blog",
+          "href": "/blog",
+          "variant": "secondary"
+        }
+      },
+      "settings": {
+        "theme": "accent"
+      }
+    }
+  ]
+}

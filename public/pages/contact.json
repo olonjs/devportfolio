@@ -1,0 +1,97 @@
+{
+  "id": "contact-page",
+  "slug": "contact",
+  "meta": {
+    "title": "Contact Andrew Linh — Consulting and Technical Writing",
+    "description": "Contact Andrew Linh for consulting on backend architecture, structured data systems, AI-native tooling, developer platforms, or technical writing engagements."
+  },
+  "sections": [
+    {
+      "id": "contact-page-hero",
+      "type": "page-hero",
+      "data": {
+        "label": "Contact",
+        "title": "Let’s talk about architecture, tooling, or writing",
+        "description": "If you are working on a backend platform, a structured content system, or internal tooling that needs sharper contracts and clearer operational behavior, I would be glad to hear more."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "contact-form-section",
+      "type": "contact-form",
+      "data": {
+        "label": "Reach out",
+        "title": "Project inquiries and editorial work",
+        "description": "Share the problem space, current team shape, and what success would look like. Short notes are fine.",
+        "email": "hello@andrewlinh.dev",
+        "formNote": "Typical topics: architecture reviews, platform strategy, structured content modeling, AI agent tooling, and technical writing retainers.",
+        "links": [
+          {
+            "id": "contact-link-1",
+            "label": "GitHub",
+            "href": "https://github.com/andrewlinh",
+            "icon": "github"
+          },
+          {
+            "id": "contact-link-2",
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/andrewlinh",
+            "icon": "linkedin"
+          },
+          {
+            "id": "contact-link-3",
+            "label": "RSS",
+            "href": "/blog/rss.xml",
+            "icon": "rss"
+          }
+        ]
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "contact-bio-panel",
+      "type": "bio-panel",
+      "data": {
+        "label": "Working style",
+        "title": "Calm collaboration, explicit decisions, written follow-through",
+        "description": "I like engagements where architecture is discussed in enough detail to make trade-offs visible. That often means short discovery conversations, a clear document trail, and simple communication rhythms.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+          "alt": "Minimal meeting space with laptop and notebook on a table"
+        },
+        "note": "Remote-friendly, async-friendly, and comfortable working with product, platform, and leadership stakeholders."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "contact-final-cta",
+      "type": "contact-cta",
+      "data": {
+        "label": "Availability",
+        "title": "Open to focused consulting engagements and writing commissions",
+        "description": "The best fit is usually a well-scoped systems problem with real business stakes and a team that values technical clarity.",
+        "primaryCta": {
+          "id": "contact-final-cta-1",
+          "label": "Email Andrew",
+          "href": "mailto:hello@andrewlinh.dev",
+          "variant": "primary"
+        },
+        "secondaryCta": {
+          "id": "contact-final-cta-2",
+          "label": "Browse case studies",
+          "href": "/work",
+          "variant": "secondary"
+        }
+      },
+      "settings": {
+        "theme": "accent"
+      }
+    }
+  ]
+}

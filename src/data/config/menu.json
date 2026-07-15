@@ -1,0 +1,51 @@
+{
+  "main": [
+    {
+      "id": "nav-about",
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "id": "nav-blog",
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "id": "nav-work",
+      "label": "Work",
+      "href": "/work"
+    },
+    {
+      "id": "nav-contact",
+      "label": "Contact",
+      "href": "/contact",
+      "isCta": true
+    }
+  ],
+  "footer": [
+    {
+      "id": "foot-github",
+      "label": "GitHub",
+      "href": "https://github.com/andrewlinh",
+      "icon": "github"
+    },
+    {
+      "id": "foot-linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/andrewlinh",
+      "icon": "linkedin"
+    },
+    {
+      "id": "foot-rss",
+      "label": "RSS",
+      "href": "/blog/rss.xml",
+      "icon": "rss"
+    },
+    {
+      "id": "foot-email",
+      "label": "Email",
+      "href": "mailto:hello@andrewlinh.dev",
+      "icon": "mail"
+    }
+  ]
+}

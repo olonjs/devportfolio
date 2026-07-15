@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-mcp-manifest-index",
+  "generatedAt": "2026-07-15T12:50:01.213Z",
+  "pages": [
+    {
+      "slug": "about",
+      "title": "About Andrew Linh — Architecture, Writing, and Systems Thinking",
+      "description": "Learn about Andrew Linh’s professional path, technical stack, and design philosophy across backend systems, developer tooling, structured content, and AI-native infrastructure.",
+      "manifestHref": "/mcp-manifests/about.json",
+      "contractHref": "/schemas/about.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "bio-panel",
+        "timeline",
+        "skills-grid",
+        "philosophy"
+      ]
+    },
+    {
+      "slug": "blog",
+      "title": "Blog — Writing on Structured Systems and Developer Tooling",
+      "description": "Read essays by Andrew Linh on schema-driven content, end-to-end type safety, AI agent tooling, developer experience, and practical backend architecture.",
+      "manifestHref": "/mcp-manifests/blog.json",
+      "contractHref": "/schemas/blog.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "blog-rollup",
+        "philosophy",
+        "contact-cta"
+      ]
+    },
+    {
+      "slug": "contact",
+      "title": "Contact Andrew Linh — Consulting and Technical Writing",
+      "description": "Contact Andrew Linh for consulting on backend architecture, structured data systems, AI-native tooling, developer platforms, or technical writing engagements.",
+      "manifestHref": "/mcp-manifests/contact.json",
+      "contractHref": "/schemas/contact.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "contact-form",
+        "bio-panel",
+        "contact-cta"
+      ]
+    },
+    {
+      "slug": "form",
+      "title": "Home",
+      "description": "OlonJS tenant alpha — form smoke test",
+      "manifestHref": "/mcp-manifests/form.json",
+      "contractHref": "/schemas/form.schema.json",
+      "sectionTypes": [
+        "footer",
+        "form-demo"
+      ]
+    },
+    {
+      "slug": "home",
+      "title": "Andrew Linh — Systems Architect and Technical Writer",
+      "description": "Explore the portfolio and writing of Andrew Linh, a systems architect focused on backend platforms, structured data systems, developer tools, and AI-native infrastructure.",
+      "manifestHref": "/mcp-manifests/home.json",
+      "contractHref": "/schemas/home.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "editorial-hero",
+        "featured-projects",
+        "blog-rollup",
+        "bio-panel",
+        "contact-cta"
+      ]
+    },
+    {
+      "slug": "posts-detail",
+      "title": "Article detail page for Andrew Linh technical writing",
+      "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.",
+      "manifestHref": "/mcp-manifests/posts-detail.json",
+      "contractHref": "/schemas/posts-detail.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "post-detail"
+      ]
+    },
+    {
+      "slug": "projects-detail",
+      "title": "Project case study detail page for Andrew Linh portfolio",
+      "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.",
+      "manifestHref": "/mcp-manifests/projects-detail.json",
+      "contractHref": "/schemas/projects-detail.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "project-detail"
+      ]
+    },
+    {
+      "slug": "work",
+      "title": "Work — Case Studies in Backend and Data Architecture",
+      "description": "Browse detailed project case studies by Andrew Linh covering backend platforms, data systems, AI tooling, and developer experience architecture.",
+      "manifestHref": "/mcp-manifests/work.json",
+      "contractHref": "/schemas/work.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "featured-projects",
+        "bio-panel",
+        "contact-cta"
+      ]
+    }
+  ]
+}

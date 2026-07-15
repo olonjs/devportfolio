@@ -1,0 +1,24 @@
+{
+  "id": "form-page",
+  "slug": "form",
+  "meta": {
+    "title": "Home",
+    "description": "OlonJS tenant alpha — form smoke test"
+  },
+  "sections": [
+    {
+      "id": "form-demo-1",
+      "type": "form-demo",
+      "data": {
+        "anchorId": "form-demo",
+        "recipientEmail": "test@olonjs.io",
+        "icon": "mail",
+        "title": "contact us",
+        "description": "Compila il modulo e ti risponderemo al più presto.",
+        "submitLabel": "Invia",
+        "successMessage": "Richiesta inviata con successo."
+      }
+    }
+  ],
+  "global-header": false
+}

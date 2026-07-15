@@ -1,0 +1,78 @@
+{
+  "id": "work-page",
+  "slug": "work",
+  "meta": {
+    "title": "Work — Case Studies in Backend and Data Architecture",
+    "description": "Browse detailed project case studies by Andrew Linh covering backend platforms, data systems, AI tooling, and developer experience architecture."
+  },
+  "sections": [
+    {
+      "id": "work-page-hero",
+      "type": "page-hero",
+      "data": {
+        "label": "Work",
+        "title": "Project case studies with context, trade-offs, and measurable outcomes",
+        "description": "Each project page documents the technical problem, the architecture decision, the stack involved, and the concrete business or operational result."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "work-featured-projects",
+      "type": "featured-projects",
+      "data": {
+        "label": "Case studies",
+        "title": "Recent architecture engagements",
+        "description": "Representative projects across data platforms, AI infrastructure, and developer-facing backend systems.",
+        "items": {
+          "$ref": "../collections/projects/projects.json"
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "work-bio-panel",
+      "type": "bio-panel",
+      "data": {
+        "label": "Approach",
+        "title": "I document the architecture, not only the implementation",
+        "description": "Good case studies should show why a system changed, which trade-offs were accepted, and how the outcome was measured. That same discipline improves delivery work itself.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+          "alt": "Laptop and notebook on a minimalist desk in a dark office"
+        },
+        "note": "Available for architecture reviews, design systems for internal platforms, and technical writing around complex software."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "work-contact-cta",
+      "type": "contact-cta",
+      "data": {
+        "label": "Discuss a project",
+        "title": "Have a platform problem that needs both architecture and explanation?",
+        "description": "I work best on systems that are already important to the business and need to become more reliable, more legible, or easier for multiple teams to evolve.",
+        "primaryCta": {
+          "id": "work-contact-cta-1",
+          "label": "Book an intro call",
+          "href": "/contact",
+          "variant": "primary"
+        },
+        "secondaryCta": {
+          "id": "work-contact-cta-2",
+          "label": "Read the blog",
+          "href": "/blog",
+          "variant": "secondary"
+        }
+      },
+      "settings": {
+        "theme": "accent"
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "about-page",
+  "slug": "about",
+  "meta": {
+    "title": "About Andrew Linh — Architecture, Writing, and Systems Thinking",
+    "description": "Learn about Andrew Linh’s professional path, technical stack, and design philosophy across backend systems, developer tooling, structured content, and AI-native infrastructure."
+  },
+  "sections": [
+    {
+      "id": "about-page-hero",
+      "type": "page-hero",
+      "data": {
+        "label": "About",
+        "title": "A systems architect who writes to make architecture legible",
+        "description": "My work sits between implementation detail and organizational clarity: platform strategy, typed interfaces, infrastructure decisions, and the narratives teams need in order to operate them well."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "about-bio-panel",
+      "type": "bio-panel",
+      "data": {
+        "label": "Background",
+        "title": "From backend delivery to platform-level system design",
+        "description": "I began in application engineering, moved into data-heavy backend systems, and gradually specialized in the layer where product requirements meet platform constraints. Over time that expanded into technical writing: design docs, schema governance, internal documentation, and public essays about reliable systems.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80",
+          "alt": "Close portrait of a thoughtful engineer seated near a window"
+        },
+        "note": "I prefer simple interfaces, explicit contracts, and infrastructure that explains itself."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "about-timeline",
+      "type": "timeline",
+      "data": {
+        "label": "Path",
+        "title": "Professional trajectory",
+        "items": [
+          {
+            "id": "timeline-1",
+            "period": "2017–2019",
+            "title": "Backend Engineer",
+            "organization": "Product engineering teams",
+            "body": "Built API services and operational tooling for SaaS products, with a focus on data integrity, deployment safety, and incident response."
+          },
+          {
+            "id": "timeline-2",
+            "period": "2019–2022",
+            "title": "Senior Systems Engineer",
+            "organization": "Platform and data organizations",
+            "body": "Led architecture work around event pipelines, typed service boundaries, and warehouse-facing backend systems with multi-team dependencies."
+          },
+          {
+            "id": "timeline-3",
+            "period": "2022–2024",
+            "title": "Staff Architect",
+            "organization": "Developer platform initiatives",
+            "body": "Designed internal tooling and contract layers that improved reliability, reduced duplicated infra work, and made system behavior easier to reason about."
+          },
+          {
+            "id": "timeline-4",
+            "period": "2024–Present",
+            "title": "Independent Architect and Writer",
+            "organization": "Consulting and editorial practice",
+            "body": "Advising teams on backend architecture, structured content systems, AI-native tooling, and technical communication that survives implementation."
+          }
+        ]
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "about-skills-grid",
+      "type": "skills-grid",
+      "data": {
+        "label": "Stack",
+        "title": "Tools and systems I reach for often",
+        "items": [
+          {
+            "id": "skill-1",
+            "category": "Language",
+            "label": "TypeScript",
+            "icon": "braces",
+            "body": "My default choice for end-to-end contracts across API design, content systems, and internal platforms."
+          },
+          {
+            "id": "skill-2",
+            "category": "Infrastructure",
+            "label": "Distributed services",
+            "icon": "server",
+            "body": "Service boundaries, queue-backed workflows, event processing, and operationally legible runtime patterns."
+          },
+          {
+            "id": "skill-3",
+            "category": "Data",
+            "label": "Relational and analytical stores",
+            "icon": "database",
+            "body": "PostgreSQL, warehouse query governance, lineage-aware data design, and schema lifecycle management."
+          },
+          {
+            "id": "skill-4",
+            "category": "AI systems",
+            "label": "Agent tooling and policy layers",
+            "icon": "cpu",
+            "body": "Tool registries, execution envelopes, observability, and runtime controls for AI-native products."
+          },
+          {
+            "id": "skill-5",
+            "category": "Platform",
+            "label": "Workflow orchestration",
+            "icon": "workflow",
+            "body": "Designing deterministic workflow surfaces that coordinate retries, approvals, and long-running jobs safely."
+          }
+        ]
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "about-philosophy",
+      "type": "philosophy",
+      "data": {
+        "label": "Philosophy",
+        "title": "How I think about architecture work",
+        "description": "The goal is rarely maximal complexity. It is usually the smallest durable system that can explain itself.",
+        "items": [
+          {
+            "id": "principle-1",
+            "title": "Legibility is a feature",
+            "body": "Systems should make it easy to understand ownership, active configuration, and the consequences of change. If only the original author can explain the architecture, the system is underdesigned."
+          },
+          {
+            "id": "principle-2",
+            "title": "Contracts beat conventions",
+            "body": "Important boundaries deserve typed, reviewable contracts with runtime validation in the places trust actually breaks down."
+          },
+          {
+            "id": "principle-3",
+            "title": "Operational calm matters",
+            "body": "A design that performs well on happy paths but generates confusing incidents is not complete. Failure modes must be boring and diagnosable."
+          }
+        ]
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

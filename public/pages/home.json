@@ -1,0 +1,287 @@
+{
+  "id": "home-page",
+  "slug": "home",
+  "meta": {
+    "title": "Andrew Linh — Systems Architect and Technical Writer",
+    "description": "Explore the portfolio and writing of Andrew Linh, a systems architect focused on backend platforms, structured data systems, developer tools, and AI-native infrastructure."
+  },
+  "sections": [
+    {
+      "id": "home-editorial-hero",
+      "type": "editorial-hero",
+      "data": {
+        "label": "Andrew Linh",
+        "title": "Systems architecture for products that need",
+        "titleHighlight": "clarity under load.",
+        "description": "I design backend platforms, structured data systems, and AI-native tooling with an emphasis on legibility, type safety, and operational calm.",
+        "status": "Available for consulting in Q2",
+        "primaryCta": {
+          "id": "home-hero-cta-1",
+          "label": "Start a conversation",
+          "href": "/contact",
+          "variant": "primary"
+        },
+        "secondaryCta": {
+          "id": "home-hero-cta-2",
+          "label": "See selected work",
+          "href": "/work",
+          "variant": "secondary"
+        }
+      },
+      "settings": {
+        "paddingTop": "xl",
+        "paddingBottom": "lg",
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-featured-projects",
+      "type": "featured-projects",
+      "data": {
+        "label": "Selected work",
+        "title": "Case studies in backend architecture and system design",
+        "description": "A small set of projects where the technical problem was clear, the architectural trade-offs mattered, and the outcome was measurable.",
+        "items": {
+          "ledger-graph-migration": {
+            "id": "ledger-graph-migration",
+            "slug": "ledger-graph-migration",
+            "title": "Ledger Graph Migrationp",
+            "category": "Data Platform",
+            "year": "2025",
+            "summary": "Rebuilt a payment-ledger dependency service from ad-hoc SQL traversals into a graph-backed event pipeline that could explain settlement state in milliseconds instead of minutes.",
+            "context": "A fintech platform had grown a reconciliation engine around recursive SQL and delayed batch jobs. Operators could not answer why a payout was blocked without running custom scripts.",
+            "problem": "The system mixed transactional writes, lineage queries, and retry orchestration in one relational workflow, producing lock contention and opaque incident handling.",
+            "architecture": "I separated the write path from the explanation path, emitting append-only ledger events into Kafka, materializing relationship edges into a graph projection, and exposing deterministic trace queries through a typed service boundary.",
+            "result": "Median payout-trace latency dropped from 11.4 minutes to 420 milliseconds, and incident triage time during settlement windows fell by 68 percent.",
+            "outcomeLong": "The biggest gain was not only latency but operator confidence. Support and finance teams could inspect state transitions without waking engineering, while platform teams gained a clean contract for downstream analytics and audit exports.",
+            "stack": [
+              "TypeScript",
+              "Kafka",
+              "PostgreSQL",
+              "Neo4j",
+              "OpenTelemetry"
+            ]
+          },
+          "docs-schema-pipeline": {
+            "id": "docs-schema-pipeline",
+            "slug": "docs-schema-pipeline",
+            "title": "Docs Schema Pipeline",
+            "category": "Developer Experience",
+            "year": "2024",
+            "summary": "Designed a schema-driven documentation pipeline for an internal platform so product docs, API references, and release notes could be authored once and published consistently across surfaces.",
+            "context": "Teams maintained markdown fragments, API snippets, and changelog entries in separate systems, which caused drift between the product, docs site, and support tooling.",
+            "problem": "Every team solved structured content differently, so navigation, metadata, and validation rules changed from one repository to the next.",
+            "architecture": "I introduced a shared content schema package, JSON-authored publishing manifests, and TypeScript-generated render contracts that enforced field-level guarantees from authoring to delivery.",
+            "result": "Documentation publishing time fell from two days of manual QA to a 20-minute automated pipeline, while support ticket deflection improved 24 percent after launch.",
+            "outcomeLong": "The program created a repeatable way to evolve docs as a product surface. New documentation types no longer needed a custom renderer or manual governance process.",
+            "stack": [
+              "TypeScript",
+              "Zod",
+              "Node.js",
+              "Vite",
+              "GitHub Actions"
+            ]
+          },
+          "agent-tooling-control-plane": {
+            "id": "agent-tooling-control-plane",
+            "slug": "agent-tooling-control-plane",
+            "title": "Agent Tooling Control Plane",
+            "category": "AI Infrastructure",
+            "year": "2025",
+            "summary": "Built a control plane for tool-enabled AI agents that standardized tool registration, execution traces, and safety policies across multiple internal assistants.",
+            "context": "Three teams were building AI copilots with duplicated wrappers around APIs, uneven telemetry, and no shared policy layer for rate limits or human escalation.",
+            "problem": "Agents could call tools, but operations had no consistent record of which action happened, why it happened, or whether a fallback path was available.",
+            "architecture": "I defined a typed tool registry, execution envelopes with structured inputs and outputs, and a policy runtime that could intercept calls for approval, retries, and observability before forwarding to the target system.",
+            "result": "Time to add a new tool dropped from roughly 3 engineer-days to under 4 hours, and production debugging of failed agent actions improved because every step shipped with normalized traces.",
+            "outcomeLong": "The control plane became a foundation for safer experimentation. Teams could ship domain-specific assistants without rewriting execution plumbing, while security retained central visibility into tool access patterns.",
+            "stack": [
+              "TypeScript",
+              "Temporal",
+              "Redis",
+              "OpenTelemetry",
+              "gRPC"
+            ]
+          },
+          "warehouse-query-gateway": {
+            "id": "warehouse-query-gateway",
+            "slug": "warehouse-query-gateway",
+            "title": "Warehouse Query Gateway",
+            "category": "Backend Architecture",
+            "year": "2023",
+            "summary": "Introduced a typed query gateway in front of a multi-tenant analytics warehouse to prevent unsafe workloads, normalize caching, and make query cost visible to product teams.",
+            "context": "A SaaS analytics product allowed many internal services to hit the warehouse directly, leading to noisy-neighbor issues and expensive exploratory queries in production paths.",
+            "problem": "There was no shared contract for query shape, access policy, or caching strategy, so every service optimized independently and often poorly.",
+            "architecture": "I inserted a gateway that accepted only named, schema-validated query definitions, applied tenant-aware caching, and attached cost telemetry to every execution path before forwarding requests to the warehouse.",
+            "result": "Warehouse spend dropped 31 percent quarter over quarter, p95 dashboard latency improved by 43 percent, and support incidents tied to runaway queries nearly disappeared.",
+            "outcomeLong": "The gateway clarified ownership around analytics workloads and made performance decisions legible. Teams could reason about the cost of product features before launch instead of after billing surprises.",
+            "stack": [
+              "Go",
+              "PostgreSQL",
+              "BigQuery",
+              "Redis",
+              "Prometheus"
+            ]
+          }
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-blog-rollup",
+      "type": "blog-rollup",
+      "data": {
+        "label": "Latest writing",
+        "title": "Notes on content systems, type contracts, and AI tooling",
+        "description": "Recent essays from the editorial side of the practice.",
+        "items": {
+          "schema-driven-content-without-regret": {
+            "id": "schema-driven-content-without-regret",
+            "slug": "schema-driven-content-without-regret",
+            "title": "Schema-Driven Content Without Regret",
+            "dek": "How to use strict content schemas to speed up publishing instead of trapping editors in brittle abstractions.",
+            "date": "2026-01-14",
+            "readingTime": "8 min read",
+            "tags": [
+              "content systems",
+              "schemas",
+              "cms"
+            ],
+            "related": [
+              "structured authoring",
+              "editor UX",
+              "validation"
+            ],
+            "content": [
+              "Schema-driven content is often sold as a governance tool, but the more interesting question is whether it improves editorial flow. In practice, teams only keep a structured system if it reduces ambiguity and removes repetitive review cycles.",
+              "The most durable pattern I have seen is to encode the invariants that already matter in production: URL shape, required metadata, relation integrity, and render-safe field types. Everything else should remain flexible enough for editors to work at writing speed.",
+              "A useful schema is narrow where breakage is expensive and permissive where exploration is editorial. That usually means strong contracts for taxonomy, embeds, and navigation, combined with lighter constraints for narrative structure.",
+              "The implementation detail many teams miss is feedback timing. Validation at publish time is too late. Editors need field-level guidance, sensible defaults, and previews that reflect the same render path the site will use in production.",
+              "If a schema makes authors feel policed instead of supported, it will be bypassed. Good systems make the correct shape the path of least resistance."
+            ]
+          },
+          "end-to-end-type-safety-is-an-org-design-problem": {
+            "id": "end-to-end-type-safety-is-an-org-design-problem",
+            "slug": "end-to-end-type-safety-is-an-org-design-problem",
+            "title": "End-to-End Type Safety Is an Org Design Problem",
+            "dek": "Type safety fails less often because of missing tooling than because ownership boundaries are unclear between APIs, content, and frontend surfaces.",
+            "date": "2026-02-03",
+            "readingTime": "10 min read",
+            "tags": [
+              "type safety",
+              "typescript",
+              "platform"
+            ],
+            "related": [
+              "schema ownership",
+              "api contracts",
+              "frontend architecture"
+            ],
+            "content": [
+              "Teams like to frame end-to-end type safety as a language feature, but the harder part is deciding who owns the contract when multiple systems touch the same data. A generated client is only as trustworthy as the source of truth behind it.",
+              "The best implementations start with a small number of canonical schemas and treat all renderers, APIs, and jobs as consumers of those schemas rather than parallel authors. That changes how work is divided across teams.",
+              "One anti-pattern is allowing every boundary to reshape data independently while still claiming the system is typed. Types become decorative when transforms are untracked or conventions live in Slack threads.",
+              "Type safety becomes real when schema changes are reviewable, migration paths are explicit, and runtime validation exists where trust actually breaks down. Compile-time guarantees are necessary, but they are not sufficient.",
+              "In other words: if your organization cannot agree on ownership, TypeScript will not save you."
+            ]
+          },
+          "tooling-for-ai-agents-needs-boring-infrastructure": {
+            "id": "tooling-for-ai-agents-needs-boring-infrastructure",
+            "slug": "tooling-for-ai-agents-needs-boring-infrastructure",
+            "title": "Tooling for AI Agents Needs Boring Infrastructure",
+            "dek": "Reliable agent systems depend less on model novelty and more on the operational discipline behind tool execution, tracing, and failure handling.",
+            "date": "2026-02-22",
+            "readingTime": "9 min read",
+            "tags": [
+              "ai agents",
+              "tooling",
+              "observability"
+            ],
+            "related": [
+              "workflow engines",
+              "safety",
+              "runtime policy"
+            ],
+            "content": [
+              "The most common mistake in agent platforms is treating tool invocation like a side feature. In reality, once an agent can act on external systems, execution plumbing becomes the product.",
+              "You need structured envelopes for inputs and outputs, durable traces, retry semantics, and a policy layer that can stop or reroute risky actions. None of this is glamorous, which is exactly why it matters.",
+              "Boring infrastructure wins because it creates predictable failure modes. When an agent call fails, operators should know whether the model selected the wrong tool, the tool returned invalid data, or a downstream dependency timed out.",
+              "This is also where developer experience matters. If adding a new tool requires bespoke wrappers and custom telemetry, teams will duplicate logic and drift immediately.",
+              "The organizations shipping credible agent systems are usually the ones that quietly solved execution discipline first."
+            ]
+          },
+          "developer-experience-begins-with-system-legibility": {
+            "id": "developer-experience-begins-with-system-legibility",
+            "slug": "developer-experience-begins-with-system-legibility",
+            "title": "Developer Experience Begins with System Legibility",
+            "dek": "Fast onboarding and clean APIs matter, but DX improves most when engineers can explain what the system is doing and why.",
+            "date": "2026-03-11",
+            "readingTime": "7 min read",
+            "tags": [
+              "developer experience",
+              "platform",
+              "observability"
+            ],
+            "related": [
+              "internal tools",
+              "docs",
+              "operability"
+            ],
+            "content": [
+              "Developer experience is often reduced to ergonomics: better CLI design, cleaner SDKs, nicer templates. Those things help, but they do not compensate for a system that is hard to read.",
+              "Legibility means an engineer can trace a request, inspect a configuration source, understand the active contract, and predict what a change will affect. It is the difference between confidence and cargo culting.",
+              "In platform work, the highest leverage improvements are often explanatory rather than flashy. A good error message, visible ownership metadata, or a schema diff can save more time than a redesigned dashboard.",
+              "This is one reason documentation should be treated as runtime support, not marketing exhaust. Engineers need systems that explain themselves while they are in motion.",
+              "If a platform is elegant only when presented in architecture slides, the developer experience is not actually good."
+            ]
+          }
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-bio-panel",
+      "type": "bio-panel",
+      "data": {
+        "label": "Short bio",
+        "title": "Technical depth, editorial discipline, and a bias toward calm systems",
+        "description": "I work at the intersection of architecture and explanation. My background spans backend platform design, data contracts, and internal developer tooling. I care about making systems easier to reason about, not only faster to ship.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+          "alt": "Portrait of a technical professional in a dark studio setting"
+        },
+        "note": "Based in Europe, working globally across product, platform, and editorial teams."
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    },
+    {
+      "id": "home-contact-cta",
+      "type": "contact-cta",
+      "data": {
+        "label": "Contact",
+        "title": "Need an architect who can also write the system down clearly?",
+        "description": "I help teams design backend platforms, developer-facing infrastructure, and structured content systems that remain understandable after launch.",
+        "primaryCta": {
+          "id": "home-contact-cta-1",
+          "label": "Contact Andrew",
+          "href": "/contact",
+          "variant": "primary"
+        },
+        "secondaryCta": {
+          "id": "home-contact-cta-2",
+          "label": "Read the blog",
+          "href": "/blog",
+          "variant": "secondary"
+        }
+      },
+      "settings": {
+        "theme": "accent"
+      }
+    }
+  ]
+}
