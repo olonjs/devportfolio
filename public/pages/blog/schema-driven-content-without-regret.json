@@ -1,0 +1,48 @@
+{
+  "id": "posts-detail-page",
+  "slug": "blog/schema-driven-content-without-regret",
+  "collection": {
+    "source": "posts",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Article detail page for Andrew Linh technical writing",
+    "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content."
+  },
+  "sections": [
+    {
+      "id": "post-detail-section",
+      "type": "post-detail",
+      "data": {
+        "item": {
+          "id": "schema-driven-content-without-regret",
+          "slug": "schema-driven-content-without-regret",
+          "title": "Schema-Driven Content Without Regret",
+          "dek": "How to use strict content schemas to speed up publishing instead of trapping editors in brittle abstractions.",
+          "date": "2026-01-14",
+          "readingTime": "8 min read",
+          "tags": [
+            "content systems",
+            "schemas",
+            "cms"
+          ],
+          "related": [
+            "structured authoring",
+            "editor UX",
+            "validation"
+          ],
+          "content": [
+            "Schema-driven content is often sold as a governance tool, but the more interesting question is whether it improves editorial flow. In practice, teams only keep a structured system if it reduces ambiguity and removes repetitive review cycles.",
+            "The most durable pattern I have seen is to encode the invariants that already matter in production: URL shape, required metadata, relation integrity, and render-safe field types. Everything else should remain flexible enough for editors to work at writing speed.",
+            "A useful schema is narrow where breakage is expensive and permissive where exploration is editorial. That usually means strong contracts for taxonomy, embeds, and navigation, combined with lighter constraints for narrative structure.",
+            "The implementation detail many teams miss is feedback timing. Validation at publish time is too late. Editors need field-level guidance, sensible defaults, and previews that reflect the same render path the site will use in production.",
+            "If a schema makes authors feel policed instead of supported, it will be bypassed. Good systems make the correct shape the path of least resistance."
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "projects-detail-page",
-  "slug": "projects-detail",
+  "slug": "work/[slug]",
   "collection": {
     "source": "projects",
     "paramKey": "slug"

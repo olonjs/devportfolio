@@ -1,0 +1,48 @@
+{
+  "id": "posts-detail-page",
+  "slug": "blog/developer-experience-begins-with-system-legibility",
+  "collection": {
+    "source": "posts",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Article detail page for Andrew Linh technical writing",
+    "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content."
+  },
+  "sections": [
+    {
+      "id": "post-detail-section",
+      "type": "post-detail",
+      "data": {
+        "item": {
+          "id": "developer-experience-begins-with-system-legibility",
+          "slug": "developer-experience-begins-with-system-legibility",
+          "title": "Developer Experience Begins with System Legibility",
+          "dek": "Fast onboarding and clean APIs matter, but DX improves most when engineers can explain what the system is doing and why.",
+          "date": "2026-03-11",
+          "readingTime": "7 min read",
+          "tags": [
+            "developer experience",
+            "platform",
+            "observability"
+          ],
+          "related": [
+            "internal tools",
+            "docs",
+            "operability"
+          ],
+          "content": [
+            "Developer experience is often reduced to ergonomics: better CLI design, cleaner SDKs, nicer templates. Those things help, but they do not compensate for a system that is hard to read.",
+            "Legibility means an engineer can trace a request, inspect a configuration source, understand the active contract, and predict what a change will affect. It is the difference between confidence and cargo culting.",
+            "In platform work, the highest leverage improvements are often explanatory rather than flashy. A good error message, visible ownership metadata, or a schema diff can save more time than a redesigned dashboard.",
+            "This is one reason documentation should be treated as runtime support, not marketing exhaust. Engineers need systems that explain themselves while they are in motion.",
+            "If a platform is elegant only when presented in architecture slides, the developer experience is not actually good."
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

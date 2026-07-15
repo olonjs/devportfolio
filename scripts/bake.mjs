@@ -71,8 +71,6 @@ async function readJsonFile(filePath) {
 }
 
 async function expandCollectionTarget(slug, pageFilePath) {
-  if (!/\[[^\]]+\]/.test(slug)) return [slug];
-
   let pageConfig;
   try {
     pageConfig = await readJsonFile(pageFilePath);
@@ -86,7 +84,15 @@ async function expandCollectionTarget(slug, pageFilePath) {
   }
 
   const token = `[${binding.paramKey}]`;
-  if (!slug.includes(token)) return [slug];
+  // Prefer authored route pattern (page.slug) when the file path is not parametric
+  // (e.g. posts-detail.json with slug "blog/[slug]").
+  const authoredSlug =
+    typeof pageConfig.slug === 'string'
+      ? pageConfig.slug.replace(/\\/g, '/').replace(/^\/+|\/+$/g, '')
+      : '';
+  const routePattern =
+    authoredSlug.includes(token) ? authoredSlug : slug.includes(token) ? slug : '';
+  if (!routePattern) return [slug];
 
   const collectionPath = path.resolve(collectionsDir, binding.source, `${binding.source}.json`);
   let collection;
@@ -98,7 +104,9 @@ async function expandCollectionTarget(slug, pageFilePath) {
 
   if (!collection || typeof collection !== 'object' || Array.isArray(collection)) return [slug];
   const itemIds = Object.keys(collection).sort((a, b) => a.localeCompare(b));
-  return itemIds.length > 0 ? itemIds.map((itemId) => slug.replace(token, itemId)) : [slug];
+  return itemIds.length > 0
+    ? itemIds.map((itemId) => routePattern.replace(token, itemId))
+    : [slug];
 }
 
 async function listJsonFilesRecursive(dir) {

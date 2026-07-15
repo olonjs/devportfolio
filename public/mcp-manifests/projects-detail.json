@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-15T12:50:01.210Z",
+  "generatedAt": "2026-07-15T19:30:04.158Z",
   "slug": "projects-detail",
   "title": "Project case study detail page for Andrew Linh portfolio",
   "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.",

@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-15T19:32:39.532Z",
-  "slug": "contact",
-  "title": "Contact Andrew Linh — Consulting and Technical Writing",
-  "description": "Contact Andrew Linh for consulting on backend architecture, structured data systems, AI-native tooling, developer platforms, or technical writing engagements.",
-  "contractHref": "/schemas/contact.schema.json",
+  "generatedAt": "2026-07-15T19:32:39.525Z",
+  "slug": "blog/end-to-end-type-safety-is-an-org-design-problem",
+  "title": "Article detail page for Andrew Linh technical writing",
+  "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.",
+  "contractHref": "/schemas/blog/end-to-end-type-safety-is-an-org-design-problem.schema.json",
   "transport": {
     "kind": "window-message",
     "requestType": "olonjs:webmcp:tool-call",
@@ -15,10 +15,10 @@
   "capabilities": {
     "resources": [
       {
-        "uri": "olon://pages/contact",
-        "name": "Contact Andrew Linh — Consulting and Technical Writing Data",
+        "uri": "olon://pages/blog/end-to-end-type-safety-is-an-org-design-problem",
+        "name": "Article detail page for Andrew Linh technical writing Data",
         "mimeType": "application/json",
-        "description": "Structured content for the contact page."
+        "description": "Structured content for the blog/end-to-end-type-safety-is-an-org-design-problem page."
       },
       {
         "uri": "olon://pages",
@@ -31,10 +31,7 @@
   "sectionTypes": [
     "header",
     "footer",
-    "page-hero",
-    "contact-form",
-    "bio-panel",
-    "contact-cta"
+    "post-detail"
   ],
   "sectionInstances": [
     {
@@ -50,28 +47,10 @@
       "label": "footer"
     },
     {
-      "id": "contact-page-hero",
-      "type": "page-hero",
+      "id": "post-detail-section",
+      "type": "post-detail",
       "scope": "local",
-      "label": "Let’s talk about architecture, tooling, or writing"
-    },
-    {
-      "id": "contact-form-section",
-      "type": "contact-form",
-      "scope": "local",
-      "label": "Project inquiries and editorial work"
-    },
-    {
-      "id": "contact-bio-panel",
-      "type": "bio-panel",
-      "scope": "local",
-      "label": "Calm collaboration, explicit decisions, written follow-through"
-    },
-    {
-      "id": "contact-final-cta",
-      "type": "contact-cta",
-      "scope": "local",
-      "label": "Open to focused consulting engagements and writing commissions"
+      "label": "post-detail"
     }
   ],
   "tools": [

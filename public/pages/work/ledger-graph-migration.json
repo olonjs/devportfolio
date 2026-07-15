@@ -1,0 +1,43 @@
+{
+  "id": "projects-detail-page",
+  "slug": "work/ledger-graph-migration",
+  "collection": {
+    "source": "projects",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Project case study detail page for Andrew Linh portfolio",
+    "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes."
+  },
+  "sections": [
+    {
+      "id": "project-detail-section",
+      "type": "project-detail",
+      "data": {
+        "item": {
+          "id": "ledger-graph-migration",
+          "slug": "ledger-graph-migration",
+          "title": "Ledger Graph Migrationpww",
+          "category": "Data Platform",
+          "year": "2025",
+          "summary": "Rebuilt a payment-ledger dependency service from ad-hoc SQL traversals into a graph-backed event pipeline that could explain settlement state in milliseconds instead of minutes.",
+          "context": "A fintech platform had grown a reconciliation engine around recursive SQL and delayed batch jobs. Operators could not answer why a payout was blocked without running custom scripts.",
+          "problem": "The system mixed transactional writes, lineage queries, and retry orchestration in one relational workflow, producing lock contention and opaque incident handling.",
+          "architecture": "I separated the write path from the explanation path, emitting append-only ledger events into Kafka, materializing relationship edges into a graph projection, and exposing deterministic trace queries through a typed service boundary.",
+          "result": "Median payout-trace latency dropped from 11.4 minutes to 420 milliseconds, and incident triage time during settlement windows fell by 68 percent.",
+          "outcomeLong": "The biggest gain was not only latency but operator confidence. Support and finance teams could inspect state transitions without waking engineering, while platform teams gained a clean contract for downstream analytics and audit exports.",
+          "stack": [
+            "TypeScript",
+            "Kafka",
+            "PostgreSQL",
+            "Neo4j",
+            "OpenTelemetry"
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

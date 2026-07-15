@@ -1,0 +1,43 @@
+{
+  "id": "projects-detail-page",
+  "slug": "work/docs-schema-pipeline",
+  "collection": {
+    "source": "projects",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Project case study detail page for Andrew Linh portfolio",
+    "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes."
+  },
+  "sections": [
+    {
+      "id": "project-detail-section",
+      "type": "project-detail",
+      "data": {
+        "item": {
+          "id": "docs-schema-pipeline",
+          "slug": "docs-schema-pipeline",
+          "title": "Docs Schema Pipeline",
+          "category": "Developer Experience",
+          "year": "2024",
+          "summary": "Designed a schema-driven documentation pipeline for an internal platform so product docs, API references, and release notes could be authored once and published consistently across surfaces.",
+          "context": "Teams maintained markdown fragments, API snippets, and changelog entries in separate systems, which caused drift between the product, docs site, and support tooling.",
+          "problem": "Every team solved structured content differently, so navigation, metadata, and validation rules changed from one repository to the next.",
+          "architecture": "I introduced a shared content schema package, JSON-authored publishing manifests, and TypeScript-generated render contracts that enforced field-level guarantees from authoring to delivery.",
+          "result": "Documentation publishing time fell from two days of manual QA to a 20-minute automated pipeline, while support ticket deflection improved 24 percent after launch.",
+          "outcomeLong": "The program created a repeatable way to evolve docs as a product surface. New documentation types no longer needed a custom renderer or manual governance process.",
+          "stack": [
+            "TypeScript",
+            "Zod",
+            "Node.js",
+            "Vite",
+            "GitHub Actions"
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

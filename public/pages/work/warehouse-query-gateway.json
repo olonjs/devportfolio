@@ -1,0 +1,43 @@
+{
+  "id": "projects-detail-page",
+  "slug": "work/warehouse-query-gateway",
+  "collection": {
+    "source": "projects",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Project case study detail page for Andrew Linh portfolio",
+    "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes."
+  },
+  "sections": [
+    {
+      "id": "project-detail-section",
+      "type": "project-detail",
+      "data": {
+        "item": {
+          "id": "warehouse-query-gateway",
+          "slug": "warehouse-query-gateway",
+          "title": "Warehouse Query Gateway",
+          "category": "Backend Architecture",
+          "year": "2023",
+          "summary": "Introduced a typed query gateway in front of a multi-tenant analytics warehouse to prevent unsafe workloads, normalize caching, and make query cost visible to product teams.",
+          "context": "A SaaS analytics product allowed many internal services to hit the warehouse directly, leading to noisy-neighbor issues and expensive exploratory queries in production paths.",
+          "problem": "There was no shared contract for query shape, access policy, or caching strategy, so every service optimized independently and often poorly.",
+          "architecture": "I inserted a gateway that accepted only named, schema-validated query definitions, applied tenant-aware caching, and attached cost telemetry to every execution path before forwarding requests to the warehouse.",
+          "result": "Warehouse spend dropped 31 percent quarter over quarter, p95 dashboard latency improved by 43 percent, and support incidents tied to runaway queries nearly disappeared.",
+          "outcomeLong": "The gateway clarified ownership around analytics workloads and made performance decisions legible. Teams could reason about the cost of product features before launch instead of after billing surprises.",
+          "stack": [
+            "Go",
+            "PostgreSQL",
+            "BigQuery",
+            "Redis",
+            "Prometheus"
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

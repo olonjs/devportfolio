@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-15T19:32:39.532Z",
-  "slug": "contact",
-  "title": "Contact Andrew Linh — Consulting and Technical Writing",
-  "description": "Contact Andrew Linh for consulting on backend architecture, structured data systems, AI-native tooling, developer platforms, or technical writing engagements.",
-  "contractHref": "/schemas/contact.schema.json",
+  "generatedAt": "2026-07-15T19:32:39.544Z",
+  "slug": "work/ledger-graph-migration",
+  "title": "Project case study detail page for Andrew Linh portfolio",
+  "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.",
+  "contractHref": "/schemas/work/ledger-graph-migration.schema.json",
   "transport": {
     "kind": "window-message",
     "requestType": "olonjs:webmcp:tool-call",
@@ -15,10 +15,10 @@
   "capabilities": {
     "resources": [
       {
-        "uri": "olon://pages/contact",
-        "name": "Contact Andrew Linh — Consulting and Technical Writing Data",
+        "uri": "olon://pages/work/ledger-graph-migration",
+        "name": "Project case study detail page for Andrew Linh portfolio Data",
         "mimeType": "application/json",
-        "description": "Structured content for the contact page."
+        "description": "Structured content for the work/ledger-graph-migration page."
       },
       {
         "uri": "olon://pages",
@@ -31,10 +31,7 @@
   "sectionTypes": [
     "header",
     "footer",
-    "page-hero",
-    "contact-form",
-    "bio-panel",
-    "contact-cta"
+    "project-detail"
   ],
   "sectionInstances": [
     {
@@ -50,28 +47,10 @@
       "label": "footer"
     },
     {
-      "id": "contact-page-hero",
-      "type": "page-hero",
+      "id": "project-detail-section",
+      "type": "project-detail",
       "scope": "local",
-      "label": "Let’s talk about architecture, tooling, or writing"
-    },
-    {
-      "id": "contact-form-section",
-      "type": "contact-form",
-      "scope": "local",
-      "label": "Project inquiries and editorial work"
-    },
-    {
-      "id": "contact-bio-panel",
-      "type": "bio-panel",
-      "scope": "local",
-      "label": "Calm collaboration, explicit decisions, written follow-through"
-    },
-    {
-      "id": "contact-final-cta",
-      "type": "contact-cta",
-      "scope": "local",
-      "label": "Open to focused consulting engagements and writing commissions"
+      "label": "project-detail"
     }
   ],
   "tools": [

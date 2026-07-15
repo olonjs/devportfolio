@@ -31,6 +31,10 @@ export const PostDetail: React.FC<{ data: PostDetailData; settings: PostDetailSe
         border: 'var(--border)'
       };
   const item = data.item;
+  // collection:current unresolved leaves {$ref}; do not render broken detail shells
+  if (!item || typeof item !== 'object' || Array.isArray(item) || !('title' in item) || !Array.isArray(item.tags)) {
+    return null;
+  }
 
   return (
     <section

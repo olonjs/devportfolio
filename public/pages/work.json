@@ -29,7 +29,7 @@
           "ledger-graph-migration": {
             "id": "ledger-graph-migration",
             "slug": "ledger-graph-migration",
-            "title": "Ledger Graph Migrationp",
+            "title": "Ledger Graph Migrationpww",
             "category": "Data Platform",
             "year": "2025",
             "summary": "Rebuilt a payment-ledger dependency service from ad-hoc SQL traversals into a graph-backed event pipeline that could explain settlement state in milliseconds instead of minutes.",

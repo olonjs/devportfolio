@@ -31,6 +31,9 @@ export const ProjectDetail: React.FC<{ data: ProjectDetailData; settings: Projec
         border: 'var(--border)'
       };
   const item = data.item;
+  if (!item || typeof item !== 'object' || Array.isArray(item) || !('title' in item) || !Array.isArray(item.stack)) {
+    return null;
+  }
 
   return (
     <section

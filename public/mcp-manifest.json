@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-mcp-manifest-index",
-  "generatedAt": "2026-07-15T12:50:01.213Z",
+  "generatedAt": "2026-07-15T19:32:39.547Z",
   "pages": [
     {
       "slug": "about",
@@ -32,6 +32,18 @@
         "blog-rollup",
         "philosophy",
         "contact-cta"
+      ]
+    },
+    {
+      "slug": "blog/[slug]",
+      "title": "Article detail page for Andrew Linh technical writing",
+      "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.",
+      "manifestHref": "/mcp-manifests/blog/[slug].json",
+      "contractHref": "/schemas/blog/[slug].schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "post-detail"
       ]
     },
     {
@@ -77,30 +89,6 @@
       ]
     },
     {
-      "slug": "posts-detail",
-      "title": "Article detail page for Andrew Linh technical writing",
-      "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.",
-      "manifestHref": "/mcp-manifests/posts-detail.json",
-      "contractHref": "/schemas/posts-detail.schema.json",
-      "sectionTypes": [
-        "header",
-        "footer",
-        "post-detail"
-      ]
-    },
-    {
-      "slug": "projects-detail",
-      "title": "Project case study detail page for Andrew Linh portfolio",
-      "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.",
-      "manifestHref": "/mcp-manifests/projects-detail.json",
-      "contractHref": "/schemas/projects-detail.schema.json",
-      "sectionTypes": [
-        "header",
-        "footer",
-        "project-detail"
-      ]
-    },
-    {
       "slug": "work",
       "title": "Work — Case Studies in Backend and Data Architecture",
       "description": "Browse detailed project case studies by Andrew Linh covering backend platforms, data systems, AI tooling, and developer experience architecture.",
@@ -113,6 +101,18 @@
         "featured-projects",
         "bio-panel",
         "contact-cta"
+      ]
+    },
+    {
+      "slug": "work/[slug]",
+      "title": "Project case study detail page for Andrew Linh portfolio",
+      "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.",
+      "manifestHref": "/mcp-manifests/work/[slug].json",
+      "contractHref": "/schemas/work/[slug].schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "project-detail"
       ]
     }
   ]

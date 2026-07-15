@@ -16,6 +16,10 @@ Explore the portfolio and writing of Andrew Linh, a systems architect focused on
   Read essays by Andrew Linh on schema-driven content, end-to-end type safety, AI agent tooling, developer experience, and practical backend architecture.
   *Contract:* `/schemas/blog.schema.json` | *Manifest:* `/mcp-manifests/blog.json`
 
+- **[Article detail page for Andrew Linh technical writing](/blog/[slug])** (`blog/[slug]`)
+  Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.
+  *Contract:* `/schemas/blog/[slug].schema.json` | *Manifest:* `/mcp-manifests/blog/[slug].json`
+
 - **[Contact Andrew Linh — Consulting and Technical Writing](/contact)** (`contact`)
   Contact Andrew Linh for consulting on backend architecture, structured data systems, AI-native tooling, developer platforms, or technical writing engagements.
   *Contract:* `/schemas/contact.schema.json` | *Manifest:* `/mcp-manifests/contact.json`
@@ -28,14 +32,10 @@ Explore the portfolio and writing of Andrew Linh, a systems architect focused on
   Explore the portfolio and writing of Andrew Linh, a systems architect focused on backend platforms, structured data systems, developer tools, and AI-native infrastructure.
   *Contract:* `/schemas/home.schema.json` | *Manifest:* `/mcp-manifests/home.json`
 
-- **[Article detail page for Andrew Linh technical writing](/posts-detail)** (`posts-detail`)
-  Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content.
-  *Contract:* `/schemas/posts-detail.schema.json` | *Manifest:* `/mcp-manifests/posts-detail.json`
-
-- **[Project case study detail page for Andrew Linh portfolio](/projects-detail)** (`projects-detail`)
-  Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.
-  *Contract:* `/schemas/projects-detail.schema.json` | *Manifest:* `/mcp-manifests/projects-detail.json`
-
 - **[Work — Case Studies in Backend and Data Architecture](/work)** (`work`)
   Browse detailed project case studies by Andrew Linh covering backend platforms, data systems, AI tooling, and developer experience architecture.
   *Contract:* `/schemas/work.schema.json` | *Manifest:* `/mcp-manifests/work.json`
+
+- **[Project case study detail page for Andrew Linh portfolio](/work/[slug])** (`work/[slug]`)
+  Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes.
+  *Contract:* `/schemas/work/[slug].schema.json` | *Manifest:* `/mcp-manifests/work/[slug].json`

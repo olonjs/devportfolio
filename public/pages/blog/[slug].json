@@ -1,10 +1,7 @@
 {
   "id": "posts-detail-page",
-  "slug": "posts-detail",
-  "collection": {
-    "source": "posts",
-    "paramKey": "slug"
-  },
+  "slug": "blog/[slug]",
+  "collection": { "source": "posts", "paramKey": "slug" },
   "meta": {
     "title": "Article detail page for Andrew Linh technical writing",
     "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content."
@@ -13,14 +10,8 @@
     {
       "id": "post-detail-section",
       "type": "post-detail",
-      "data": {
-        "item": {
-          "$ref": "collection:current"
-        }
-      },
-      "settings": {
-        "theme": "dark"
-      }
+      "data": { "item": { "$ref": "collection:current" } },
+      "settings": { "theme": "dark" }
     }
   ]
 }

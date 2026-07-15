@@ -1,0 +1,43 @@
+{
+  "id": "projects-detail-page",
+  "slug": "work/agent-tooling-control-plane",
+  "collection": {
+    "source": "projects",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Project case study detail page for Andrew Linh portfolio",
+    "description": "Detailed case study page for Andrew Linh’s architecture portfolio, including context, technical problem, architectural decision, delivery stack, and measurable outcomes."
+  },
+  "sections": [
+    {
+      "id": "project-detail-section",
+      "type": "project-detail",
+      "data": {
+        "item": {
+          "id": "agent-tooling-control-plane",
+          "slug": "agent-tooling-control-plane",
+          "title": "Agent Tooling Control Plane",
+          "category": "AI Infrastructure",
+          "year": "2025",
+          "summary": "Built a control plane for tool-enabled AI agents that standardized tool registration, execution traces, and safety policies across multiple internal assistants.",
+          "context": "Three teams were building AI copilots with duplicated wrappers around APIs, uneven telemetry, and no shared policy layer for rate limits or human escalation.",
+          "problem": "Agents could call tools, but operations had no consistent record of which action happened, why it happened, or whether a fallback path was available.",
+          "architecture": "I defined a typed tool registry, execution envelopes with structured inputs and outputs, and a policy runtime that could intercept calls for approval, retries, and observability before forwarding to the target system.",
+          "result": "Time to add a new tool dropped from roughly 3 engineer-days to under 4 hours, and production debugging of failed agent actions improved because every step shipped with normalized traces.",
+          "outcomeLong": "The control plane became a foundation for safer experimentation. Teams could ship domain-specific assistants without rewriting execution plumbing, while security retained central visibility into tool access patterns.",
+          "stack": [
+            "TypeScript",
+            "Temporal",
+            "Redis",
+            "OpenTelemetry",
+            "gRPC"
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}

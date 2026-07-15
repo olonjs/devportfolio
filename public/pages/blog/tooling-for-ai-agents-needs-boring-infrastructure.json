@@ -1,0 +1,48 @@
+{
+  "id": "posts-detail-page",
+  "slug": "blog/tooling-for-ai-agents-needs-boring-infrastructure",
+  "collection": {
+    "source": "posts",
+    "paramKey": "slug"
+  },
+  "meta": {
+    "title": "Article detail page for Andrew Linh technical writing",
+    "description": "Long-form article detail page for Andrew Linh’s blog, with publication metadata, topic tags, related themes, and structured editorial content."
+  },
+  "sections": [
+    {
+      "id": "post-detail-section",
+      "type": "post-detail",
+      "data": {
+        "item": {
+          "id": "tooling-for-ai-agents-needs-boring-infrastructure",
+          "slug": "tooling-for-ai-agents-needs-boring-infrastructure",
+          "title": "Tooling for AI Agents Needs Boring Infrastructure",
+          "dek": "Reliable agent systems depend less on model novelty and more on the operational discipline behind tool execution, tracing, and failure handling.",
+          "date": "2026-02-22",
+          "readingTime": "9 min read",
+          "tags": [
+            "ai agents",
+            "tooling",
+            "observability"
+          ],
+          "related": [
+            "workflow engines",
+            "safety",
+            "runtime policy"
+          ],
+          "content": [
+            "The most common mistake in agent platforms is treating tool invocation like a side feature. In reality, once an agent can act on external systems, execution plumbing becomes the product.",
+            "You need structured envelopes for inputs and outputs, durable traces, retry semantics, and a policy layer that can stop or reroute risky actions. None of this is glamorous, which is exactly why it matters.",
+            "Boring infrastructure wins because it creates predictable failure modes. When an agent call fails, operators should know whether the model selected the wrong tool, the tool returned invalid data, or a downstream dependency timed out.",
+            "This is also where developer experience matters. If adding a new tool requires bespoke wrappers and custom telemetry, teams will duplicate logic and drift immediately.",
+            "The organizations shipping credible agent systems are usually the ones that quietly solved execution discipline first."
+          ]
+        }
+      },
+      "settings": {
+        "theme": "dark"
+      }
+    }
+  ]
+}
